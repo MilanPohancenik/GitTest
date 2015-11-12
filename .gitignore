@@ -6,6 +6,12 @@
 # Eclipse
 .metadata
 RemoteSystemsTempFiles
+.classpath
+.project
+.settings
+
+# Maven
+target
 
 # Package Files #
 *.jar
