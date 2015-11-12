@@ -9,6 +9,7 @@ RemoteSystemsTempFiles
 .classpath
 .project
 .settings
+.recommenders
 
 # Maven
 target
