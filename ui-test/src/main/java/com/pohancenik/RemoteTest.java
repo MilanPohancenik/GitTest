@@ -9,6 +9,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import org.jboss.naming.remote.client.InitialContextFactory;
+
 import com.pohancenik.module2.ejb.AbleToSayHello;
 
 /**
@@ -19,25 +21,15 @@ public class RemoteTest {
 
 	public Context initCtx() throws NamingException {
 
-//		final Hashtable<String, String> jndiProperties = new Hashtable<String, String>();
 		Properties jndiProps = new Properties();
-		jndiProps.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
+		// context factory and URL of server
+		jndiProps.put(Context.INITIAL_CONTEXT_FACTORY, InitialContextFactory.class.getName());
 		jndiProps.put(Context.PROVIDER_URL,"http-remoting://localhost:8080");
-		jndiProps.put("jboss.naming.client.ejb.context", true);
 		// username
 		jndiProps.put(Context.SECURITY_PRINCIPAL, "SuperAdmin");
 		// password
 		jndiProps.put(Context.SECURITY_CREDENTIALS, "1");
-//		jndiProperties.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
-//		final Context context = new InitialContext(jndiProperties);
-		
-		// Properties jndiProps = new Properties();
-		// jndiProps.put(Context.INITIAL_CONTEXT_FACTORY,
-		// "org.jboss.naming.HttpNamingContextFactory"
-		// );//org.jboss.naming.remote.client.InitialContextFactory.class.getName());
-		// jndiProps.put(Context.SECURITY_PRINCIPAL, "SuperAdmin");
-		// jndiProps.put(Context.SECURITY_CREDENTIALS, "1");
-		// jndiProps.put(Context.PROVIDER_URL, "http://localhost:8080");
+		// jndiProps.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
 		// jndiProps.put("jboss.naming.client.ejb.context", true);
 		// jndiProps.put("jboss.naming.client.connect.options.org.xnio.Options.SASL_POLICY_NOPLAINTEXT","false");
 

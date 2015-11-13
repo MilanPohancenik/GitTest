@@ -5,5 +5,7 @@ package com.pohancenik.module2.ejb;
  *
  */
 public interface AbleToSayHello {
+	
 	String sayHello();
+	
 }
