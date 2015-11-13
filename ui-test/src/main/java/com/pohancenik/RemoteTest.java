@@ -23,6 +23,7 @@ public class RemoteTest {
 		Properties jndiProps = new Properties();
 		jndiProps.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
 		jndiProps.put(Context.PROVIDER_URL,"http-remoting://localhost:8080");
+		jndiProps.put("jboss.naming.client.ejb.context", true);
 		// username
 		jndiProps.put(Context.SECURITY_PRINCIPAL, "SuperAdmin");
 		// password
@@ -53,7 +54,7 @@ public class RemoteTest {
 	public static void main(String[] args) throws NamingException {
 		RemoteTest test = new RemoteTest();
 		Context ctx = test.initCtx();
-		AbleToSayHello hello = (AbleToSayHello) ctx.lookup("ejb/first-test-ear-0.0.1-SNAPSHOT/first-test-module2-ejb-0.0.1-SNAPSHOT/HelloBean");
+		AbleToSayHello hello = (AbleToSayHello) ctx.lookup("first-test-ear-0.0.1-SNAPSHOT/first-test-module2-ejb-0.0.1-SNAPSHOT/HelloBean!com.pohancenik.module2.ejb.AbleToSayHello");
 		System.out.println(hello.sayHello());
 	}
 
