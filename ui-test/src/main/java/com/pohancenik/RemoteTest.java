@@ -12,6 +12,7 @@ import javax.naming.NamingException;
 import org.jboss.naming.remote.client.InitialContextFactory;
 
 import com.pohancenik.module2.ejb.AbleToSayHello;
+import com.pohancenik.module2.ejb.ShoppingCart;
 
 /**
  * @author pohancenik
@@ -46,8 +47,16 @@ public class RemoteTest {
 	public static void main(String[] args) throws NamingException {
 		RemoteTest test = new RemoteTest();
 		Context ctx = test.initCtx();
+		
 		AbleToSayHello hello = (AbleToSayHello) ctx.lookup("first-test-ear-0.0.1-SNAPSHOT/first-test-module2-ejb-0.0.1-SNAPSHOT/HelloBean!com.pohancenik.module2.ejb.AbleToSayHello");
 		System.out.println(hello.sayHello());
+		
+		ShoppingCart shoppingCart = (ShoppingCart) ctx.lookup( "first-test-ear-0.0.1-SNAPSHOT/first-test-module2-ejb-0.0.1-SNAPSHOT/ShoppingCartBean!com.pohancenik.module2.ejb.ShoppingCart" );
+		shoppingCart.addItem("Book-1");
+		shoppingCart.addItem("Book-2");
+		shoppingCart.clear();
+		shoppingCart.remove();
+		
 	}
 
 }
