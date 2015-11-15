@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>first-test-ear</artifactId>
+	<artifactId>first-test-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FirstTestEar</name>
+	<name>First test app</name>
 	<packaging>ear</packaging>
 	<parent>
 		<groupId>com.pohancenik</groupId>
@@ -16,6 +16,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
+					<applicationName>first-test-app</applicationName>
 					<modules>
 						<jarModule>
 							<groupId>com.pohancenik</groupId>
@@ -26,11 +27,13 @@
 							<groupId>com.pohancenik</groupId>
 							<artifactId>first-test-module1-ejb</artifactId>
 							<moduleId>first-test-module1-ejb</moduleId>
+							<uri>first-test-module1</uri>
 						</ejbModule>
 						<ejbModule>
 							<groupId>com.pohancenik</groupId>
 							<artifactId>first-test-module2-ejb</artifactId>
 							<moduleId>first-test-module2-ejb</moduleId>
+							<uri>first-test-module2</uri>
 						</ejbModule>
 					</modules>
 				</configuration>

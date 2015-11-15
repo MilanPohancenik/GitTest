@@ -46,7 +46,7 @@ public class TestShoppingCart {
 		// password
 		jndiProps.put(Context.SECURITY_CREDENTIALS, "1");
 		context = new InitialContext(jndiProps);
-		cart = (ShoppingCart) context.lookup( "first-test-ear-0.0.1-SNAPSHOT/first-test-module2-ejb-0.0.1-SNAPSHOT/ShoppingCartBean!com.pohancenik.module2.ejb.ShoppingCart" );
+		cart = (ShoppingCart) context.lookup( "first-test-app/first-test-module2/ShoppingCartBean!com.pohancenik.module2.ejb.ShoppingCart" );
 	}
 
 	/**

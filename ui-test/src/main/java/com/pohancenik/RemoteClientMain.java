@@ -11,6 +11,7 @@ import javax.naming.NamingException;
 
 import org.jboss.naming.remote.client.InitialContextFactory;
 
+import com.pohancenik.module2.ejb.AbleToSayHello;
 import com.pohancenik.module2.ejb.ShoppingCart;
 import com.pohancenik.module2.ejb.exception.DuplicateItemException;
 
@@ -36,8 +37,13 @@ public class RemoteClientMain {
 	}
 
 	public ShoppingCart getCart(Context ctx) throws NamingException {
-		ShoppingCart shoppingCart = (ShoppingCart) ctx.lookup( "first-test-ear-0.0.1-SNAPSHOT/first-test-module2-ejb-0.0.1-SNAPSHOT/ShoppingCartBean!com.pohancenik.module2.ejb.ShoppingCart" );
+		ShoppingCart shoppingCart = (ShoppingCart) ctx.lookup( "first-test-app/first-test-module2/ShoppingCartBean!com.pohancenik.module2.ejb.ShoppingCart" );
 		return shoppingCart;
+	}
+	
+	public AbleToSayHello getAbleToSayHello(Context ctx) throws NamingException {
+		AbleToSayHello helloBean = (AbleToSayHello) ctx.lookup("first-test-app/first-test-module2/HelloStatelessBean!com.pohancenik.module2.ejb.AbleToSayHello");
+		return helloBean;
 	}
 	
 	/**
@@ -48,21 +54,8 @@ public class RemoteClientMain {
 	public static void main(String[] args) throws NamingException, DuplicateItemException {
 		RemoteClientMain test = new RemoteClientMain();
 		Context ctx = test.initCtx();
-		
-//		AbleToSayHello hello = (AbleToSayHello) ctx.lookup("first-test-ear-0.0.1-SNAPSHOT/first-test-module2-ejb-0.0.1-SNAPSHOT/HelloBean!com.pohancenik.module2.ejb.AbleToSayHello");
-//		System.out.println(hello.sayHello());
-		
-		ShoppingCart cart = test.getCart(ctx);
-		cart.addItem("Book-1");
-		cart.addItem("Book-2");
-		
-		System.out.println("Content of shopping cart : ");
-		for ( String item : cart.getContent() ) {
-			System.out.println( " - " + item );
-		}
-		
-		cart.clear();
-		cart.remove();
+
+		System.out.println(test.getAbleToSayHello(ctx).sayHello());
 	}
 
 }

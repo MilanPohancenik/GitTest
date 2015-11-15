@@ -16,9 +16,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 @Remote(AbleToSayHello.class)
-public class HelloBean implements AbleToSayHello {
+public class HelloStatelessBean implements AbleToSayHello {
 
-	private static final Logger log = Logger.getLogger( HelloBean.class.getName() );
+	private static final Logger log = Logger.getLogger( HelloStatelessBean.class.getName() );
 	
 	/*
 	 * (non-Javadoc)
