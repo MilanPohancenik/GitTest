@@ -1,32 +1,29 @@
 /**
  * 
  */
-package com.pohancenik;
+package com.pohancenik.testcases;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Properties;
-
 import javax.naming.Context;
-import javax.naming.InitialContext;
 
-import org.jboss.naming.remote.client.InitialContextFactory;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.pohancenik.module2.ejb.ShoppingCart;
-import com.pohancenik.module2.ejb.exception.DuplicateItemException;
-import com.pohancenik.module2.ejb.exception.NotExistingItemException;
+import com.pohancenik.module2.ShoppingCart;
+import com.pohancenik.module2.exception.DuplicateItemException;
+import com.pohancenik.module2.exception.NotExistingItemException;
+import com.pohancenik.util.ContextUtil;
 
 /**
  * @author pohancenik
  *
  */
-public class TestShoppingCart {
+public class ShoppingCartBeanTest {
 
 	private static Context context;
 	
@@ -37,16 +34,8 @@ public class TestShoppingCart {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		Properties jndiProps = new Properties();
-		// context factory and URL of server
-		jndiProps.put(Context.INITIAL_CONTEXT_FACTORY, InitialContextFactory.class.getName());
-		jndiProps.put(Context.PROVIDER_URL,"http-remoting://localhost:8080");
-		// username
-		jndiProps.put(Context.SECURITY_PRINCIPAL, "SuperAdmin");
-		// password
-		jndiProps.put(Context.SECURITY_CREDENTIALS, "1");
-		context = new InitialContext(jndiProps);
-		cart = (ShoppingCart) context.lookup( "first-test-app/first-test-module2/ShoppingCartBean!com.pohancenik.module2.ejb.ShoppingCart" );
+		context = new ContextUtil().prepareContext();
+		cart = (ShoppingCart) context.lookup( "first-test-app/first-test-module2/ShoppingCartBean!com.pohancenik.module2.ShoppingCart" );
 	}
 
 	/**

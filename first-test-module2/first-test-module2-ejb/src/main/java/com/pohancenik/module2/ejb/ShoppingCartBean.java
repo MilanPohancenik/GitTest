@@ -6,7 +6,6 @@ package com.pohancenik.module2.ejb;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -16,8 +15,12 @@ import javax.ejb.Stateful;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
-import com.pohancenik.module2.ejb.exception.DuplicateItemException;
-import com.pohancenik.module2.ejb.exception.NotExistingItemException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.pohancenik.module2.ShoppingCart;
+import com.pohancenik.module2.exception.DuplicateItemException;
+import com.pohancenik.module2.exception.NotExistingItemException;
 
 /**
  * @author pohancenik
@@ -27,7 +30,7 @@ import com.pohancenik.module2.ejb.exception.NotExistingItemException;
 @Remote( ShoppingCart.class )
 public class ShoppingCartBean implements ShoppingCart {
 
-	private static final Logger log = Logger.getLogger( ShoppingCartBean.class.getName() );
+	private static final Logger log = LoggerFactory.getLogger( ShoppingCartBean.class );
 	
 	private Set<String> items;
 	
@@ -94,7 +97,7 @@ public class ShoppingCartBean implements ShoppingCart {
 	@Remove
 	@Override
 	public void remove() {
-		log.info( "Removing cart-bean on request" );
+		log.debug( "Removing cart-bean on request" );
 	}
 	
 	// LIFECYCLE listeners

@@ -23,6 +23,10 @@
 							<artifactId>first-test-module2-remote</artifactId>
 							<moduleId>first-test-module2-remote</moduleId>
 						</jarModule>
+						<jarModule>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-api</artifactId>
+						</jarModule>
 						<ejbModule>
 							<groupId>com.pohancenik</groupId>
 							<artifactId>first-test-module1-ejb</artifactId>
@@ -62,6 +66,11 @@
 			<artifactId>first-test-module2-remote</artifactId>
 			<version>[0.0.1-SNAPSHOT,0.1)</version>
 			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.12</version>
 		</dependency>
 	</dependencies>
 </project>

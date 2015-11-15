@@ -1,9 +1,9 @@
-package com.pohancenik.module2.ejb;
+package com.pohancenik.module2;
 
 import java.util.Collection;
 
-import com.pohancenik.module2.ejb.exception.DuplicateItemException;
-import com.pohancenik.module2.ejb.exception.NotExistingItemException;
+import com.pohancenik.module2.exception.DuplicateItemException;
+import com.pohancenik.module2.exception.NotExistingItemException;
 
 /**
  * @author pohancenik

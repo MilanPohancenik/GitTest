@@ -20,5 +20,11 @@
 			<artifactId>first-test-module2-remote</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.12</version>
+		</dependency>
 	</dependencies>
+	<description>First test module-2 Enterprise beans</description>
 </project>

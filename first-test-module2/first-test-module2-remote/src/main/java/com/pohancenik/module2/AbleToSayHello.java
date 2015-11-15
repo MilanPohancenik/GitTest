@@ -1,4 +1,4 @@
-package com.pohancenik.module2.ejb;
+package com.pohancenik.module2;
 
 /**
  * @author pohancenik

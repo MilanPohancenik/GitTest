@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pohancenik.module2.ejb.exception;
+package com.pohancenik.module2.exception;
 
 /**
  * @author pohancenik

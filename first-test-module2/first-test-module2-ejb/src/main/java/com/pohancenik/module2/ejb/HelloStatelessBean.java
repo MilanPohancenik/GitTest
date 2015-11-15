@@ -3,12 +3,17 @@
  */
 package com.pohancenik.module2.ejb;
 
-import java.util.logging.Logger;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.pohancenik.module2.AbleToSayHello;
 
 /**
  * @author pohancenik
@@ -18,7 +23,7 @@ import javax.ejb.Stateless;
 @Remote(AbleToSayHello.class)
 public class HelloStatelessBean implements AbleToSayHello {
 
-	private static final Logger log = Logger.getLogger( HelloStatelessBean.class.getName() );
+	private static final Logger log = LoggerFactory.getLogger( HelloStatelessBean.class );
 	
 	/*
 	 * (non-Javadoc)
@@ -33,11 +38,13 @@ public class HelloStatelessBean implements AbleToSayHello {
 
 	// LIFECYCLE listeners
 	@PostConstruct
+	@TransactionAttribute( TransactionAttributeType.NOT_SUPPORTED )
 	public void postConstruct() {
 		log.info("Post-construct");
 	}
 
 	@PreDestroy
+	@TransactionAttribute( TransactionAttributeType.NOT_SUPPORTED )
 	public void preDestroy() {
 		log.info("Pre-destroy");
 	}
