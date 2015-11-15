@@ -23,10 +23,6 @@
 							<artifactId>first-test-module2-remote</artifactId>
 							<moduleId>first-test-module2-remote</moduleId>
 						</jarModule>
-						<jarModule>
-							<groupId>org.slf4j</groupId>
-							<artifactId>slf4j-api</artifactId>
-						</jarModule>
 						<ejbModule>
 							<groupId>com.pohancenik</groupId>
 							<artifactId>first-test-module1-ejb</artifactId>
@@ -39,6 +35,10 @@
 							<moduleId>first-test-module2-ejb</moduleId>
 							<uri>first-test-module2</uri>
 						</ejbModule>
+						<jarModule>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-api</artifactId>
+						</jarModule>
 					</modules>
 				</configuration>
 			</plugin>

@@ -9,6 +9,7 @@
 	</parent>
 	<artifactId>first-test-module2-ejb</artifactId>
 	<name>First test module-2 EJB</name>
+	<description>First test module-2 Enterprise beans</description>
 	<packaging>ejb</packaging>
 	<dependencies>
 		<dependency>
@@ -26,5 +27,4 @@
 			<version>1.7.12</version>
 		</dependency>
 	</dependencies>
-	<description>First test module-2 Enterprise beans</description>
 </project>
