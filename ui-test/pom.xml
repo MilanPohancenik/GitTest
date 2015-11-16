@@ -6,8 +6,8 @@
 	<name>Ui tests for remote beans</name>
 	<parent>
 		<groupId>com.pohancenik</groupId>
-		<artifactId>first-test-java-config</artifactId>
-		<version>0.0.1</version>
+		<artifactId>java-parent</artifactId>
+		<version>1.8.0</version>
 	</parent>
 	<dependencies>
 		<dependency>

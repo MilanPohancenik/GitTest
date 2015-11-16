@@ -5,4 +5,38 @@
 	<offline>false</offline>
 	<localRepository>D:/Maven/Home/.m2/repo</localRepository>
 
+	<profiles>
+		<profile>
+			<id>default-profile</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>central</id>
+					<name>The maven central repo</name>
+					<url>https://repo.maven.apache.org/maven2</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>central-thirdparty</id>
+					<name>The maven central repo for thirdparty releases</name>
+					<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
 </settings>

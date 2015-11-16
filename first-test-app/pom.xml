@@ -7,8 +7,8 @@
 	<packaging>ear</packaging>
 	<parent>
 		<groupId>com.pohancenik</groupId>
-		<artifactId>first-test-java-config</artifactId>
-		<version>0.0.1</version>
+		<artifactId>wildfly-ejb-parent</artifactId>
+		<version>9.0.2</version>
 	</parent>
 	<build>
 		<plugins>
@@ -35,10 +35,6 @@
 							<moduleId>first-test-module2-ejb</moduleId>
 							<uri>first-test-module2</uri>
 						</ejbModule>
-						<jarModule>
-							<groupId>org.slf4j</groupId>
-							<artifactId>slf4j-api</artifactId>
-						</jarModule>
 					</modules>
 				</configuration>
 			</plugin>
@@ -66,11 +62,6 @@
 			<artifactId>first-test-module2-remote</artifactId>
 			<version>[0.0.1-SNAPSHOT,0.1)</version>
 			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.12</version>
 		</dependency>
 	</dependencies>
 </project>

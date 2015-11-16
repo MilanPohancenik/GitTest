@@ -7,8 +7,8 @@
 	<packaging>ejb</packaging>
 	<parent>
 		<groupId>com.pohancenik</groupId>
-		<artifactId>first-test-java-config</artifactId>
-		<version>0.0.1</version>
+		<artifactId>wildfly-ejb-parent</artifactId>
+		<version>9.0.2</version>
 	</parent>
 	<dependencies>
 		<dependency>

@@ -1,17 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.pohancenik</groupId>
-	<artifactId>first-test-java-config</artifactId>
-	<version>0.0.1</version>
+	<parent>
+		<groupId>com.pohancenik</groupId>
+		<artifactId>wildfly-env-parent</artifactId>
+		<version>9.0.2</version>
+	</parent>
+	<artifactId>wildfly-ejb-parent</artifactId>
 	<packaging>pom</packaging>
-	<name>java-config</name>
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<failOnMissingWebXml>false</failOnMissingWebXml>
-		<encoding>UTF-8</encoding>
-	</properties>
+	<name>Wildfly EJB parent</name>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -31,6 +28,11 @@
 						<version>7</version>
 						<defaultLibBundleDir>lib</defaultLibBundleDir>
 						<includeLibInApplicationXml>true</includeLibInApplicationXml>
+						<archive>
+							<manifestEntries>
+								<Dependencies>org.slf4j</Dependencies>
+							</manifestEntries>
+						</archive>
 					</configuration>
 				</plugin>
 			</plugins>
