@@ -2,9 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.pohancenik</groupId>
-    <artifactId>first-test-module2</artifactId>
+    <artifactId>second-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>first-test-module2-remote</artifactId>
-  <name>First test module-2 remote contract</name>
+  <artifactId>second-app-module1</artifactId>
+  <packaging>pom</packaging>
+  <name>Second app - Module 1 - Parent</name>
+  <modules>
+  	<module>ejb</module>
+  	<module>local</module>
+  	<module>remote</module>
+  </modules>
 </project>

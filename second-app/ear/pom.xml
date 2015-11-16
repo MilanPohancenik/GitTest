@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>second-app-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>Second app - EAR packaging</name>
+	<parent>
+		<groupId>com.pohancenik</groupId>
+		<artifactId>second-app</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<applicationName>second-app</applicationName>
+					<modules>
+						<ejbModule>
+							<groupId>com.pohancenik</groupId>
+							<artifactId>second-app-module1-ejb</artifactId>
+							<moduleId>second-app-module1-ejb</moduleId>
+							<uri>second-app-module1</uri>
+						</ejbModule>
+						<jarModule>
+							<groupId>com.pohancenik</groupId>
+							<artifactId>second-app-module1-local</artifactId>
+							<moduleId>second-app-module1-local</moduleId>
+						</jarModule>
+						<jarModule>
+							<groupId>com.pohancenik</groupId>
+							<artifactId>second-app-module1-remote</artifactId>
+							<moduleId>second-app-module1-remote</moduleId>
+						</jarModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>second-app-module1-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+</project>

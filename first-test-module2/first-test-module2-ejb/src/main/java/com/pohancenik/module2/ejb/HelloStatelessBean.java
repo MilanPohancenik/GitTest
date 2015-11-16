@@ -5,6 +5,7 @@ package com.pohancenik.module2.ejb;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -13,6 +14,7 @@ import javax.ejb.TransactionAttributeType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.pohancenik.BeanRequiredByOtherModulesLocal;
 import com.pohancenik.module2.AbleToSayHello;
 
 /**
@@ -25,6 +27,9 @@ public class HelloStatelessBean implements AbleToSayHello {
 
 	private static final Logger log = LoggerFactory.getLogger( HelloStatelessBean.class );
 	
+	@EJB(lookup="global/second-app/second-app-module1/BeanRequiredByOtherModules!com.pohancenik.BeanRequiredByOtherModulesLocal")
+	private BeanRequiredByOtherModulesLocal requiredBean;
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -33,7 +38,8 @@ public class HelloStatelessBean implements AbleToSayHello {
 	@Override
 	public String sayHello() {
 		log.info( "Answering client" );
-		return "I'm saying hello to you stranger!";
+		log.info( "Talking from the required bean > " + requiredBean.getLocalString() );
+		return requiredBean.getLocalString() + " + I'm saying hello to you stranger!";
 	}
 
 	// LIFECYCLE listeners

@@ -5,7 +5,6 @@
 		<groupId>com.pohancenik</groupId>
 		<artifactId>first-test-module2</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>first-test-module2-ejb</artifactId>
 	<name>First test module-2 EJB</name>
@@ -24,6 +23,12 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>second-app-module1-local</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

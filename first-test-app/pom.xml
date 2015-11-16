@@ -36,6 +36,11 @@
 							<uri>first-test-module2</uri>
 						</ejbModule>
 					</modules>
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.slf4j,deployment.second-app-0.0.1-SNAPSHOT.ear</Dependencies>
+						</manifestEntries>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -2,9 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.pohancenik</groupId>
-    <artifactId>first-test-module2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>wildfly-ejb-parent</artifactId>
+    <version>9.0.2</version>
   </parent>
-  <artifactId>first-test-module2-remote</artifactId>
-  <name>First test module-2 remote contract</name>
+  <artifactId>second-app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Second app - Parent</name>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>ear</module>
+  	<module>module1</module>
+  </modules>
 </project>
