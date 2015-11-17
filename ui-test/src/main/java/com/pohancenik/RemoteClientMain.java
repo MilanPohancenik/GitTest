@@ -11,9 +11,9 @@ import javax.naming.NamingException;
 
 import org.jboss.naming.remote.client.InitialContextFactory;
 
-import com.pohancenik.module2.AbleToSayHello;
-import com.pohancenik.module2.ShoppingCart;
-import com.pohancenik.module2.exception.DuplicateItemException;
+import com.pohancenik.remote.AbleToSayHello;
+import com.pohancenik.remote.ShoppingCart;
+import com.pohancenik.remote.exception.DuplicateItemException;
 
 /**
  * @author pohancenik
@@ -37,12 +37,12 @@ public class RemoteClientMain {
 	}
 
 	public ShoppingCart getCart(Context ctx) throws NamingException {
-		ShoppingCart shoppingCart = (ShoppingCart) ctx.lookup( "first-test-app/first-test-module2/ShoppingCartBean!com.pohancenik.module2.ShoppingCart" );
+		ShoppingCart shoppingCart = (ShoppingCart) ctx.lookup( "first-app/module2/ShoppingCartBean!com.pohancenik.module2.ShoppingCart" );
 		return shoppingCart;
 	}
 	
 	public AbleToSayHello getAbleToSayHello(Context ctx) throws NamingException {
-		AbleToSayHello helloBean = (AbleToSayHello) ctx.lookup("first-test-app/first-test-module2/HelloStatelessBean!com.pohancenik.module2.AbleToSayHello");
+		AbleToSayHello helloBean = (AbleToSayHello) ctx.lookup( "com.pohancenik.first-app/module2/HelloStatelessBean!com.pohancenik.remote.AbleToSayHello" );
 		return helloBean;
 	}
 	
@@ -55,7 +55,9 @@ public class RemoteClientMain {
 		RemoteClientMain test = new RemoteClientMain();
 		Context ctx = test.initCtx();
 
-		System.out.println(test.getAbleToSayHello(ctx).sayHello());
+		System.out.println(test.getAbleToSayHello(ctx).sayHelloFromLocal());
+		
+		System.out.println(test.getAbleToSayHello(ctx).sayHelloFromRemote());
 	}
 
 }

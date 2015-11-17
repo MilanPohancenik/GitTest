@@ -2,31 +2,26 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.pohancenik</groupId>
-    <artifactId>second-app-module1</artifactId>
+    <artifactId>first-app-module1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>second-app-module1-ejb</artifactId>
+  <artifactId>first-app-module1-ejb</artifactId>
   <packaging>ejb</packaging>
-  <name>Second app - Module 1 - EJB</name>
+  <name>First app - Module 1 - EJB</name>
   <dependencies>
+  	<dependency>
+  		<groupId>com.pohancenik</groupId>
+  		<artifactId>first-app-module1-local</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.pohancenik</groupId>
+  		<artifactId>first-app-module1-remote</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
   	<dependency>
   		<groupId>javax</groupId>
   		<artifactId>javaee-api</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.pohancenik</groupId>
-  		<artifactId>second-app-module1-local</artifactId>
-  		<version>${project.version}</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.pohancenik</groupId>
-  		<artifactId>second-app-module1-remote</artifactId>
-  		<version>${project.version}</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.slf4j</groupId>
-  		<artifactId>slf4j-api</artifactId>
-  		<scope>provided</scope>
   	</dependency>
   </dependencies>
 </project>

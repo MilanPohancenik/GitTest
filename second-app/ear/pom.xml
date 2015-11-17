@@ -15,24 +15,27 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
-					<applicationName>second-app</applicationName>
+					<applicationName>com.pohancenik.second-app</applicationName>
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.slf4j</Dependencies>
+						</manifestEntries>
+					</archive>
 					<modules>
-						<ejbModule>
-							<groupId>com.pohancenik</groupId>
-							<artifactId>second-app-module1-ejb</artifactId>
-							<moduleId>second-app-module1-ejb</moduleId>
-							<uri>second-app-module1</uri>
-						</ejbModule>
 						<jarModule>
 							<groupId>com.pohancenik</groupId>
 							<artifactId>second-app-module1-local</artifactId>
-							<moduleId>second-app-module1-local</moduleId>
 						</jarModule>
 						<jarModule>
 							<groupId>com.pohancenik</groupId>
 							<artifactId>second-app-module1-remote</artifactId>
-							<moduleId>second-app-module1-remote</moduleId>
 						</jarModule>
+						<ejbModule>
+							<groupId>com.pohancenik</groupId>
+							<artifactId>second-app-module1-ejb</artifactId>
+							<moduleId>second-app-module1-ejb</moduleId>
+							<uri>module1</uri>
+						</ejbModule>
 					</modules>
 				</configuration>
 			</plugin>
@@ -48,6 +51,16 @@
 			<artifactId>second-app-module1-ejb</artifactId>
 			<version>${project.version}</version>
 			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>second-app-module1-local</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>second-app-module1-remote</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 </project>

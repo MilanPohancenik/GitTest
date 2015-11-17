@@ -3,6 +3,8 @@
  */
 package com.pohancenik.testcases;
 
+import static org.junit.Assert.assertEquals;
+
 import javax.naming.Context;
 
 import org.junit.After;
@@ -10,9 +12,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-import com.pohancenik.module2.Counter;
+import com.pohancenik.remote.Counter;
 import com.pohancenik.util.ContextUtil;
 
 /**

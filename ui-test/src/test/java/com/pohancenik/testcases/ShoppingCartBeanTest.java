@@ -14,9 +14,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.pohancenik.module2.ShoppingCart;
-import com.pohancenik.module2.exception.DuplicateItemException;
-import com.pohancenik.module2.exception.NotExistingItemException;
+import com.pohancenik.remote.ShoppingCart;
+import com.pohancenik.remote.exception.DuplicateItemException;
+import com.pohancenik.remote.exception.NotExistingItemException;
 import com.pohancenik.util.ContextUtil;
 
 /**
