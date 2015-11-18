@@ -13,6 +13,7 @@
   	<module>ear</module>
   	<module>module1</module>
   	<module>module2</module>
+  	<module>interapp-ejb</module>
   </modules>
   <dependencyManagement>
   	<dependencies>

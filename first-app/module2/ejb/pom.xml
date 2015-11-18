@@ -1,38 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.pohancenik</groupId>
-    <artifactId>first-app-module2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>first-app-module2-ejb</artifactId>
-  <packaging>ejb</packaging>
-  <name>First app - Module 2 - EJB</name>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.pohancenik</groupId>
+		<artifactId>first-app-module2</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>first-app-module2-ejb</artifactId>
+	<packaging>ejb</packaging>
+	<name>First app - Module 2 - EJB</name>
+	<dependencies>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>first-app-module2-local</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>first-app-module2-remote</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
   	<dependency>
   		<groupId>com.pohancenik</groupId>
-  		<artifactId>first-app-module2-local</artifactId>
+  		<artifactId>first-app-interapp-ejb</artifactId>
   		<version>${project.version}</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.pohancenik</groupId>
-  		<artifactId>first-app-module2-remote</artifactId>
-  		<version>${project.version}</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>javax</groupId>
-  		<artifactId>javaee-api</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.slf4j</groupId>
-  		<artifactId>slf4j-api</artifactId>
-  		<scope>provided</scope>
+  		<type>ejb</type>
   	</dependency>
   	<dependency>
   		<groupId>com.pohancenik</groupId>
   		<artifactId>second-app-module1-local</artifactId>
   	</dependency>
-  	<dependency>
+  	  	<dependency>
   		<groupId>com.pohancenik</groupId>
   		<artifactId>second-app-module1-remote</artifactId>
   	</dependency>

@@ -40,6 +40,12 @@
 						</jarModule>
 						<ejbModule>
 							<groupId>com.pohancenik</groupId>
+							<artifactId>first-app-interapp-ejb</artifactId>
+							<moduleId>first-app-interapp-ejb</moduleId>
+							<uri>interapp</uri>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.pohancenik</groupId>
 							<artifactId>first-app-module1-ejb</artifactId>
 							<moduleId>first-app-module1-ejb</moduleId>
 							<uri>module1</uri>
@@ -69,6 +75,12 @@
 		<dependency>
 			<groupId>com.pohancenik</groupId>
 			<artifactId>first-app-module2-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>first-app-interapp-ejb</artifactId>
 			<version>${project.version}</version>
 			<type>ejb</type>
 		</dependency>

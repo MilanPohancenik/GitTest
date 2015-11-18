@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.pohancenik</groupId>
+		<artifactId>first-app</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>first-app-interapp-ejb</artifactId>
+	<packaging>ejb</packaging>
+	<name>First app - Interapplication EJB communication</name>
+	<description>An EJB module with EJB bean factories for beans comming from different enterprise applications </description>
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>second-app-module1-local</artifactId>
+  	</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>second-app-module1-remote</artifactId>
+		</dependency>
+	</dependencies>
+</project>
