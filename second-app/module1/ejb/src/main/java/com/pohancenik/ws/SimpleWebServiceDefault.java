@@ -7,9 +7,9 @@ import javax.jws.WebService;
 
 @Stateless
 @WebService( endpointInterface = "com.pohancenik.ws.SimpleWebService" )
-public class SimpleWebServiceImpl implements SimpleWebService {
+public class SimpleWebServiceDefault implements SimpleWebService {
 
-	public SimpleWebServiceImpl() {
+	public SimpleWebServiceDefault() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -19,7 +19,7 @@ public class SimpleWebServiceImpl implements SimpleWebService {
 	}
 
 	@Override
-	public int getSimpleIntegerInRange(byte range) {
+	public int getSimpleIntegerInRange(int range) {
 		Random random = new Random(System.currentTimeMillis());
 		return random.nextInt(range);
 	}

@@ -19,6 +19,6 @@ public interface SimpleWebService {
 	 * @return
 	 */
 	@WebMethod
-	int getSimpleIntegerInRange(byte range);
+	int getSimpleIntegerInRange(int range);
 	
 }
