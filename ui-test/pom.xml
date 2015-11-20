@@ -41,17 +41,17 @@
 							<goal>wsdl2java</goal>
 						</goals>
 						<configuration>
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdl>http://localhost:8080/mod/SimpleWebServiceDefault?wsdl</wsdl>
-									<extraargs>
-										<extraarg>-p</extraarg>
-										<extraarg>com.pohancenik.ws.client</extraarg>
-										<extraarg>-fe</extraarg>
-										<extraarg>jaxws21</extraarg>
-									</extraargs>
-								</wsdlOption>
-							</wsdlOptions>
+							<defaultOptions>
+								<!-- Don't need this, since default value equals to this path -->
+								<!-- <wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot> -->
+								<!-- Default options for all wsdl's since we have scanning on -->
+								<extraargs>
+									<extraarg>-p</extraarg>
+									<extraarg>com.pohancenik.ws.client</extraarg>
+									<extraarg>-fe</extraarg>
+									<extraarg>jaxws21</extraarg>
+								</extraargs>
+							</defaultOptions>
 						</configuration>
 					</execution>
 				</executions>

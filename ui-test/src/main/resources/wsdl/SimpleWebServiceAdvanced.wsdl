@@ -1,0 +1,93 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.pohancenik.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SimpleWebServiceAdvancedService" targetNamespace="http://ws.pohancenik.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.pohancenik.com/" elementFormDefault="unqualified" targetNamespace="http://ws.pohancenik.com/" version="1.0">
+
+  <xs:element name="getSimpleIntegerInRange" type="tns:getSimpleIntegerInRange"></xs:element>
+
+  <xs:element name="getSimpleIntegerInRangeResponse" type="tns:getSimpleIntegerInRangeResponse"></xs:element>
+
+  <xs:element name="getSimpleString" type="tns:getSimpleString"></xs:element>
+
+  <xs:element name="getSimpleStringResponse" type="tns:getSimpleStringResponse"></xs:element>
+
+  <xs:complexType name="getSimpleString">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSimpleStringResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSimpleIntegerInRange">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSimpleIntegerInRangeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getSimpleIntegerInRangeResponse">
+    <wsdl:part element="tns:getSimpleIntegerInRangeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSimpleStringResponse">
+    <wsdl:part element="tns:getSimpleStringResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSimpleString">
+    <wsdl:part element="tns:getSimpleString" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSimpleIntegerInRange">
+    <wsdl:part element="tns:getSimpleIntegerInRange" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SimpleWebService">
+    <wsdl:operation name="getSimpleString">
+      <wsdl:input message="tns:getSimpleString" name="getSimpleString">
+    </wsdl:input>
+      <wsdl:output message="tns:getSimpleStringResponse" name="getSimpleStringResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSimpleIntegerInRange">
+      <wsdl:input message="tns:getSimpleIntegerInRange" name="getSimpleIntegerInRange">
+    </wsdl:input>
+      <wsdl:output message="tns:getSimpleIntegerInRangeResponse" name="getSimpleIntegerInRangeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SimpleWebServiceAdvancedServiceSoapBinding" type="tns:SimpleWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="getSimpleString">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="getSimpleString">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getSimpleStringResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSimpleIntegerInRange">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="getSimpleIntegerInRange">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getSimpleIntegerInRangeResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SimpleWebServiceAdvancedService">
+    <wsdl:port binding="tns:SimpleWebServiceAdvancedServiceSoapBinding" name="SimpleWebServiceAdvancedPort">
+      <soap:address location="http://localhost:8080/mod/SimpleWebServiceAdvanced"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

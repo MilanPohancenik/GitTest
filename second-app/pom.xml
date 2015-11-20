@@ -12,5 +12,6 @@
   <modules>
   	<module>ear</module>
   	<module>module1</module>
+  	
   </modules>
 </project>
