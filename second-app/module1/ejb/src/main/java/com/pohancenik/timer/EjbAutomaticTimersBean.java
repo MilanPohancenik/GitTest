@@ -22,9 +22,9 @@ import org.slf4j.LoggerFactory;
  *
  */
 @Stateless
-public class EjbTimers {
+public class EjbAutomaticTimersBean {
 
-	private static final Logger log = LoggerFactory.getLogger( EjbTimers.class );
+	private static final Logger log = LoggerFactory.getLogger( EjbAutomaticTimersBean.class );
 	
 	@Schedule( second = "*/10", minute = "*", hour = "*", info = "Timer1" )
 	public void timer1(Timer timer) {
