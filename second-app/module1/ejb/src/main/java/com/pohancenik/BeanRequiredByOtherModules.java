@@ -7,8 +7,6 @@ import static javax.ejb.TransactionAttributeType.NOT_SUPPORTED;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Local;
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 
@@ -20,8 +18,6 @@ import org.slf4j.LoggerFactory;
  *
  */
 @Stateless
-@Local( BeanRequiredByOtherModulesLocal.class )
-@Remote( BeanRequiredByOtherModulesRemote.class )
 public class BeanRequiredByOtherModules implements BeanRequiredByOtherModulesLocal, BeanRequiredByOtherModulesRemote {
 
 	private static final Logger log = LoggerFactory.getLogger( BeanRequiredByOtherModules.class );

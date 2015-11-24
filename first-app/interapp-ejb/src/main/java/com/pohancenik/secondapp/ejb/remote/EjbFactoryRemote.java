@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pohancenik.ejb.app2.remote;
+package com.pohancenik.secondapp.ejb.remote;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;

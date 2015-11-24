@@ -14,10 +14,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.pohancenik.context.LocalhostLaboratoryWildFly;
 import com.pohancenik.remote.ShoppingCart;
 import com.pohancenik.remote.exception.DuplicateItemException;
 import com.pohancenik.remote.exception.NotExistingItemException;
-import com.pohancenik.util.ContextUtil;
 
 /**
  * @author pohancenik
@@ -34,7 +34,7 @@ public class ShoppingCartBeanTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		context = new ContextUtil().prepareContext();
+		context = LocalhostLaboratoryWildFly.prepareContext();
 		cart = (ShoppingCart) context.lookup( "first-test-app/first-test-module2/ShoppingCartBean!com.pohancenik.module2.ShoppingCart" );
 	}
 

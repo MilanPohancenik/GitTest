@@ -7,4 +7,15 @@
   </parent>
   <artifactId>first-app-module1-remote</artifactId>
   <name>First app - Module 1 - Remote</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.pohancenik</groupId>
+  		<artifactId>first-app-module2-remote</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax</groupId>
+  		<artifactId>javaee-api</artifactId>
+  	</dependency>
+  </dependencies>
 </project>

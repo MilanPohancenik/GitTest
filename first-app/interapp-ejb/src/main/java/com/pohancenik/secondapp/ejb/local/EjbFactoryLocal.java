@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pohancenik.ejb.app2.local;
+package com.pohancenik.secondapp.ejb.local;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;

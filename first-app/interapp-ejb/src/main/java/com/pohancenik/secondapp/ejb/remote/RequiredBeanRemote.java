@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pohancenik.ejb.app2.local;
+package com.pohancenik.secondapp.ejb.remote;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -17,5 +17,5 @@ import javax.inject.Qualifier;
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE, ElementType.METHOD})
-public @interface RequiredBeanLocal {
+public @interface RequiredBeanRemote {
 }

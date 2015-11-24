@@ -7,4 +7,10 @@
   </parent>
   <artifactId>first-app-module2-remote</artifactId>
   <name>First app - Module 2 - Remote</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>javax</groupId>
+  		<artifactId>javaee-api</artifactId>
+  	</dependency>
+  </dependencies>
 </project>

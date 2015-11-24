@@ -9,7 +9,6 @@ import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Remote;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
 import javax.ejb.TransactionAttribute;
@@ -27,7 +26,6 @@ import com.pohancenik.remote.exception.NotExistingItemException;
  *
  */
 @Stateful
-@Remote( ShoppingCart.class )
 public class ShoppingCartBean implements ShoppingCart {
 
 	private static final Logger log = LoggerFactory.getLogger( ShoppingCartBean.class );
@@ -41,7 +39,7 @@ public class ShoppingCartBean implements ShoppingCart {
 	public void addItem(String id) throws DuplicateItemException {
 		log.info("Adding item [" + id + "] to shopping cart");
 		if ( items.contains( id )) {
-			throw new DuplicateItemException();
+			throw new DuplicateItemException( id );
 		}
 		items.add( id );
 	}
@@ -78,7 +76,7 @@ public class ShoppingCartBean implements ShoppingCart {
 	 */
 	@Override
 	public void clear() {
-		log.info("Clearing all items to shopping cart");
+		log.info("Clearing all items from shopping cart");
 		items.clear();
 	}
 	
@@ -97,7 +95,7 @@ public class ShoppingCartBean implements ShoppingCart {
 	@Remove
 	@Override
 	public void remove() {
-		log.debug( "Removing cart-bean on request" );
+		log.info( "Removing cart-bean on request" );
 	}
 	
 	// LIFECYCLE listeners

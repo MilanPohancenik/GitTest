@@ -2,6 +2,8 @@ package com.pohancenik.remote;
 
 import java.util.Collection;
 
+import javax.ejb.Remote;
+
 import com.pohancenik.remote.exception.DuplicateItemException;
 import com.pohancenik.remote.exception.NotExistingItemException;
 
@@ -9,6 +11,7 @@ import com.pohancenik.remote.exception.NotExistingItemException;
  * @author pohancenik
  *
  */
+@Remote
 public interface ShoppingCart {
 	
 	/**

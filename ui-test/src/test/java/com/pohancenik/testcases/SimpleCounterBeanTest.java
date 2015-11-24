@@ -13,8 +13,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.pohancenik.context.LocalhostLaboratoryWildFly;
 import com.pohancenik.remote.Counter;
-import com.pohancenik.util.ContextUtil;
 
 /**
  * @author pohancenik
@@ -31,7 +31,7 @@ public class SimpleCounterBeanTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		context = new ContextUtil().prepareContext();
+		context = LocalhostLaboratoryWildFly.prepareContext();
 		counter = (Counter) context.lookup( "first-test-app/first-test-module2/SingletonSimpleCounterBean!com.pohancenik.module2.Counter" );
 	}
 

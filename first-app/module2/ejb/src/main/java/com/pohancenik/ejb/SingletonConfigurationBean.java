@@ -12,7 +12,6 @@ import javax.ejb.ConcurrencyManagement;
 import javax.ejb.ConcurrencyManagementType;
 import javax.ejb.Lock;
 import javax.ejb.LockType;
-import javax.ejb.Remote;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.ejb.TransactionAttribute;
@@ -30,7 +29,6 @@ import com.pohancenik.remote.State;
  */
 @Startup
 @Singleton
-@Remote( Configuration.class )
 @ConcurrencyManagement( ConcurrencyManagementType.CONTAINER )
 @Lock( LockType.READ )
 @AccessTimeout( unit = TimeUnit.SECONDS, value = 10 )

@@ -26,6 +26,11 @@
 			<artifactId>first-app-module2-remote</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.pohancenik</groupId>
+			<artifactId>first-app-module1-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

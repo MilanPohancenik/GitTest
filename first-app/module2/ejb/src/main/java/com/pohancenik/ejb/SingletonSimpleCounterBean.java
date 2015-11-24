@@ -5,7 +5,6 @@ package com.pohancenik.ejb;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Remote;
 import javax.ejb.Singleton;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -20,7 +19,6 @@ import com.pohancenik.remote.Counter;
  *
  */
 @Singleton
-@Remote(Counter.class)
 public class SingletonSimpleCounterBean implements Counter {
 
 	private long internalValue = 0L;

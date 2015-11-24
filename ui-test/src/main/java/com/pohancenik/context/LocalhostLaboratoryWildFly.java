@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pohancenik.util;
+package com.pohancenik.context;
 
 import java.util.Properties;
 
@@ -15,9 +15,9 @@ import org.jboss.naming.remote.client.InitialContextFactory;
  * @author pohancenik
  *
  */
-public class ContextUtil {
+public class LocalhostLaboratoryWildFly {
 
-	public Context prepareContext() throws NamingException {
+	public static Context prepareContext() throws NamingException {
 		Properties jndiProps = new Properties();
 		// context factory and URL of server
 		jndiProps.put(Context.INITIAL_CONTEXT_FACTORY, InitialContextFactory.class.getName());

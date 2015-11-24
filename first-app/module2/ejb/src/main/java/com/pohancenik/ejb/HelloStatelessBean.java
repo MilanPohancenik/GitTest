@@ -5,7 +5,6 @@ package com.pohancenik.ejb;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -16,16 +15,15 @@ import org.slf4j.LoggerFactory;
 
 import com.pohancenik.BeanRequiredByOtherModulesLocal;
 import com.pohancenik.BeanRequiredByOtherModulesRemote;
-import com.pohancenik.ejb.app2.local.RequiredBeanLocal;
-import com.pohancenik.ejb.app2.remote.RequiredBeanRemote;
 import com.pohancenik.remote.AbleToSayHello;
+import com.pohancenik.secondapp.ejb.local.RequiredBeanLocal;
+import com.pohancenik.secondapp.ejb.remote.RequiredBeanRemote;
 
 /**
  * @author pohancenik
  *
  */
 @Stateless
-@Remote(AbleToSayHello.class)
 public class HelloStatelessBean implements AbleToSayHello {
 
 	private static final Logger log = LoggerFactory.getLogger( HelloStatelessBean.class );
